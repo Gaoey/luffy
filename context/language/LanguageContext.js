@@ -1,5 +1,5 @@
 import React from 'react';
-import { AsyncStorage } from '@react-native-community/async-storage '
+import { AsyncStorage } from '@react-native-community/async-storage'
 import R from 'ramda'
 import ThaiWord from './th';
 import EnglishWord from './en';
@@ -33,11 +33,18 @@ export class LanguageProvider extends React.Component {
   }
 
   init = async () => {
-    const value = await AsyncStorage.getItem('@language')
-    this.setState({
-      language: R.isNil(value) ? languages.th.title : value,
-      word: R.isNil(value) ? languages.th.word : languages[value].word,
-    })
+    try {
+      const value = await AsyncStorage.getItem('@language')
+      this.setState({
+        language: R.isNil(value) ? languages.en.title : value,
+        word: R.isNil(value) ? languages.en.word : languages[value].word,
+      })
+    } catch {
+      this.setState({
+        language: languages.en.title,
+        word: languages.en.word,
+      })
+    }
   }
 
   updateLanguage = async (e) => {

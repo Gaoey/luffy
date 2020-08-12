@@ -1,8 +1,8 @@
-const global = {
-  date: 'วันที่',
-  list: 'รายการ',
+const auth = {
+  email: 'อีเมว',
+  password: 'รหัสผ่าน',
 };
 
 export default {
-  ...global
+  ...auth
 };
