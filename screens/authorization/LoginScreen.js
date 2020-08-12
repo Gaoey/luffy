@@ -21,7 +21,7 @@ export default function LoginScreen({ navigation }) {
                   onSubmit={values => {
                     const { email, password } = values;
                     // login(email, password)
-                    navigation.navigate("HomeScreen");
+                    navigation.navigate("Main");
                   }}
                 >
                   {({ handleSubmit, handleChange, values }) => (
