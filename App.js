@@ -11,6 +11,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="LoginScreen" component={Screen.Auth.LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="HomeScreen" component={Screen.Main.HomeScreen} options={{ headerShown: true }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

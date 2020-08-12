@@ -5,25 +5,27 @@ import { PageTemplate, Space } from '../../components'
 
 import { TextInput, Card, Title, Paragraph, Button } from 'react-native-paper';
 
-export default function LoginScreen() {
-  const [text, setText] = React.useState('');
+export default function LoginScreen({ navigation }) {
+  const [email, setEmail] = React.useState('');
+  const [pwd, setPwd] = React.useState('');
   return (
     <PageTemplate backgroundImage={BG}>
       <Card>
         <Card.Content>
           <TextInput
             label="Email"
-            value={text}
-            onChangeText={text => setText(text)}
+            value={email}
+            onChangeText={text => setEmail(text)}
           />
           <Space />
           <TextInput
             label="Password"
-            value={text}
-            onChangeText={text => setText(text)}
+            value={pwd}
+            secureTextEntry
+            onChangeText={text => setPwd(text)}
           />
           <Space />
-          <Button icon="camera" mode="contained" onPress={() => console.log('Pressed')}>Press me</Button>
+          <Button icon="login" mode="contained" onPress={() => navigation.navigate("HomeScreen")}>Sign In</Button>
         </Card.Content>
       </Card>
     </PageTemplate >
