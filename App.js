@@ -7,8 +7,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { LanguageProvider } from './context/language/LanguageContext';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { startNetworkLogging } from 'react-native-network-logger';
 import * as Screen from './screens'
 
+startNetworkLogging();
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -16,7 +18,7 @@ function MainRoute() {
   return (
     <Tab.Navigator>
       <Tab.Screen name="HomeScreen" component={Screen.Main.HomeScreen} options={{ tabBarIcon: () => <Icon name="chevron-down" size={30} color="grey" /> }} />
-      <Tab.Screen name="SecondScreen" component={Screen.Main.SecondScreen} options={{ tabBarIcon: () => <Icon name="chevron-down" size={30} color="grey" /> }} />
+      <Tab.Screen name="LogScreen" component={Screen.Main.LogScreen} options={{ tabBarIcon: () => <Icon name="chevron-down" size={30} color="grey" /> }} />
       <Tab.Screen name="ThirdScreen" component={Screen.Main.ThirdScreen} options={{ tabBarIcon: () => <Icon name="chevron-down" size={30} color="grey" /> }} />
     </Tab.Navigator>
   );
