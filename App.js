@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { Button, View, Text } from 'react-native';
+import store from './stores/store.js';
+import { Provider } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { LanguageProvider } from './context/language/LanguageContext';
@@ -10,7 +12,7 @@ import * as Screen from './screens'
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function Main() {
+function MainRoute() {
   return (
     <Tab.Navigator>
       <Tab.Screen name="HomeScreen" component={Screen.Main.HomeScreen} options={{ tabBarIcon: () => <Icon name="chevron-down" size={30} color="grey" /> }} />
@@ -20,16 +22,24 @@ function Main() {
   );
 }
 
+function Route() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="LoginScreen" component={Screen.Auth.LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Main" component={MainRoute} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
+
 function App() {
   return (
-    <LanguageProvider>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="LoginScreen" component={Screen.Auth.LoginScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Main" component={Main} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </LanguageProvider>
+    <Provider store={store}>
+      <LanguageProvider>
+        <Route />
+      </LanguageProvider>
+    </Provider>
   );
 }
 
