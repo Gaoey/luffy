@@ -1,9 +1,9 @@
 import HomeScreen from './HomeScreen.js'
-import LogScreen from './LogScreen.js'
+import SecondScreen from './SecondScreen.js'
 import ThirdScreen from './ThirdScreen.js'
 
 export {
   HomeScreen,
-  LogScreen,
+  SecondScreen,
   ThirdScreen
 }

@@ -22,7 +22,7 @@ function MainTab() {
   return (
     <Tab.Navigator>
       <Tab.Screen name="HomeScreen" component={Screen.Main.HomeScreen} options={{ tabBarIcon: () => <Icon name="chevron-down" size={30} color="grey" /> }} />
-      <Tab.Screen name="LogScreen" component={Screen.Main.LogScreen} options={{ tabBarIcon: () => <Icon name="chevron-down" size={30} color="grey" /> }} />
+      <Tab.Screen name="SecondScreen" component={Screen.Main.SecondScreen} options={{ tabBarIcon: () => <Icon name="chevron-down" size={30} color="grey" /> }} />
       <Tab.Screen name="ThirdScreen" component={Screen.Main.ThirdScreen} options={{ tabBarIcon: () => <Icon name="chevron-down" size={30} color="grey" /> }} />
     </Tab.Navigator>
   )
