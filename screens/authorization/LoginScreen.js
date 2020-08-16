@@ -11,7 +11,7 @@ export default function LoginScreen({ navigation }) {
     <LanguageContext.Consumer>
       {
         ({ word }) => (
-          <PageTemplate backgroundImage={BG}>
+          <PageTemplate backgroundImage={BG} middle>
             <Headline style={{ fontWeight: "bold", color: "white", textAlign: "center" }}>LUFFY STARTER KIT</Headline>
             <Space />
             <Card>

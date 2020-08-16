@@ -5,23 +5,25 @@ import R from 'ramda'
 
 export const templateMargin = 20
 
-const PageTemplate = ({ children, backgroundColor = theme.white, noMargin = false, backgroundImage }) => {
+const PageTemplate = ({ children, backgroundColor = theme.color, noMargin = false, backgroundImage, middle = false }) => {
   return (
     <View style={[styles.body, { backgroundColor, height: '100%' }]}>
       {
         !R.isNil(backgroundImage)
           ?
-          <ImageBackground source={backgroundImage} style={styles.image}>
+          <ImageBackground source={backgroundImage} style={[styles.image, middle && styles.middle]}>
             <View style={noMargin ? { margin: 0 } : styles.container}>
               {children}
             </View>
           </ImageBackground>
           :
-          <View style={noMargin ? { margin: 0 } : styles.container}>
-            {children}
+          <View style={[middle && styles.middle]}>
+            <View style={noMargin ? { margin: 0 } : styles.container}>
+              {children}
+            </View>
           </View>
       }
-    </View>
+    </View >
   )
 }
 
@@ -30,13 +32,16 @@ const styles = StyleSheet.create({
     flex: 1
   },
   container: {
-    margin: templateMargin
+    margin: templateMargin,
   },
   image: {
     flex: 1,
-    resizeMode: "cover",
-    justifyContent: "center"
+    resizeMode: "cover"
   },
+  middle: {
+    flex: 1,
+    justifyContent: "center"
+  }
 })
 
 export default PageTemplate

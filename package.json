@@ -30,8 +30,10 @@
     "react-native-safe-area-context": "^3.1.4",
     "react-native-screens": "^2.10.1",
     "react-native-svg": "^12.1.0",
+    "react-native-svg-transformer": "^0.14.3",
     "react-native-vector-icons": "^7.0.0",
     "react-redux": "^7.2.1",
+    "recoil": "^0.0.10",
     "victory-native": "^35.0.1",
     "yup": "^0.29.3"
   },
@@ -41,6 +43,7 @@
     "@react-native-community/eslint-config": "^2.0.0",
     "babel-jest": "^26.3.0",
     "eslint": "^7.6.0",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "jest": "^26.3.0",
     "metro-react-native-babel-preset": "^0.62.0",
     "react-test-renderer": "16.13.1"
