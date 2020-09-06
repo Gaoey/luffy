@@ -33,7 +33,6 @@
     "react-native-svg-transformer": "^0.14.3",
     "react-native-vector-icons": "^7.0.0",
     "react-redux": "^7.2.1",
-    "recoil": "^0.0.10",
     "victory-native": "^35.0.1",
     "yup": "^0.29.3"
   },
