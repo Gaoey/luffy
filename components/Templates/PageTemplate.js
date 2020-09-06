@@ -5,9 +5,9 @@ import R from 'ramda'
 
 export const templateMargin = 20
 
-const PageTemplate = ({ children, backgroundColor = theme.color, noMargin = false, backgroundImage, middle = false }) => {
+const PageTemplate = ({ children, backgroundColor = theme.white, noMargin = false, backgroundImage, middle = false }, style) => {
   return (
-    <View style={[styles.body, { backgroundColor, height: '100%' }]}>
+    <View style={[styles.body, { backgroundColor, height: '100%' }, style]}>
       {
         !R.isNil(backgroundImage)
           ?
@@ -29,7 +29,7 @@ const PageTemplate = ({ children, backgroundColor = theme.color, noMargin = fals
 
 const styles = StyleSheet.create({
   body: {
-    flex: 1
+    flex: 1,
   },
   container: {
     margin: templateMargin,

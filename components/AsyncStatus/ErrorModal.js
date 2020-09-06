@@ -15,8 +15,10 @@ const ErrorModal = ({
   buttonText = "OK",
   onPress = () => { },
   buttonColor = theme.color,
-  condition = false
+  condition = false,
+  errorMsg = ""
 }) => {
+  console.log({ errorMsg })
   if (condition) {
     const [modalVisible, setModalVisible] = useState(condition);
     return (
